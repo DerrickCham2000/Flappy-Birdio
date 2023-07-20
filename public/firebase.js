@@ -95,19 +95,6 @@ export function setup_network() {
     console.log(errorCode, errorMessage);
   });
 
-  onValue(allPlayersRef, (snapshot) => {
-    //Fires whenever a change occurs
-    players = snapshot.val() || {};
-    updateScoreboardPlayers();
-  })
-
-  onChildAdded(allPlayersRef, (snapshot) => {
-    //Fires whenever a new node is added the tree
-    const addedPlayer = snapshot.val();
-    players[addedPlayer.id] = addedPlayer;
-    updateScoreboardPlayers();
-  })
-  
   onAuthStateChanged(auth, (user) => {
     if (user) {
       //You're logged in!
@@ -129,6 +116,20 @@ export function setup_network() {
     } else {
       //You're logged out.
     }
+  })
+
+  onValue(allPlayersRef, (snapshot) => {
+    //Fires whenever a change occurs
+    players = snapshot.val() || {};
+    updateScoreboardPlayers();
+  })
+
+  onChildAdded(allPlayersRef, (snapshot) => {
+    //Fires whenever a new node is added the tree
+    const addedPlayer = snapshot.val();
+    console.log('hji');
+    players[addedPlayer.id] = addedPlayer;
+    updateScoreboardPlayers();
   })
 
   playerNameInput.addEventListener("change", (e) => {
