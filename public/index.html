@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Flappy Birdio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+  </head>
+
+  <body>
+    <div>
+      <h1>Flappy Birdio</h1>
+    </div>
+    <div class="score-container">
+      <div id="bestScore"></div>
+      <div id="currentScore"></div>
+    </div>
+    <div class="game-wrapper">
+      <div class="game-canvas">
+        <canvas id="canvas" width="431" height="768">
+      </div>
+      <div class="scoreboard-wrapper">
+        <div>Insert Your Name</div>
+        <input id="player-name" maxlength="10" type="text" />
+        <div id="scoreboard" class="scoreboard"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/flappybird.js"></script>
+    <script type="module" src="/firebase.js"></script>
+  </body>
+</html>
+
